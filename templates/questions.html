@@ -1,0 +1,572 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block content %} 
+
+<style>
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    align-items: center;
+    background: #fff;
+}
+.container1{
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.container1 header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.container1 header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+.container1 form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 990px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.container1 form .form{
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+.container1 form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.container1 form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+.container1 form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.container1 form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.container1 form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+form button:hover{
+    background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+    margin: 0 6px;
+}
+form .backBtn i{
+    transform: rotate(180deg);
+}
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
+
+@media (max-width: 750px) {
+    .container1 form{
+        overflow-y: scroll;
+    }
+    .container1 form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+}
+</style>
+
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+   <title>Responsive Regisration Form </title>
+</head>
+<body>
+<br>
+{% if error_message %}
+                <div class="alert alert-info" role="alert">
+                    {{ error_message }}
+                </div>
+                {% endif %}
+    <div class="container1">
+    
+        <header>Complete the checklist! to maximize your fitness journey.</header>
+
+        <form action="#">
+              
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>location</label>
+                            <select required>
+                                <option disabled selected>Select location</option>
+                               <option>California</option>
+                                <option>Nevada</option>
+                                <option>OregonWashington</option>
+                                <option>Arizona</option>
+                                <option>Wyoming</option>
+                                <option>Colardo</option>
+                                <option>New Mexico</option>
+                                <option>Texas</option>
+                                <option>Kansas</option>
+                                <option>Nebraska</option>
+                                <option>Minnesota</option>
+                                <option>Wisconsin</option>
+                                <option>Illinois</option>
+                                <option>Michegan</option>
+                                <option>Ohio</option>
+                                <option>Pennsylvania</option>
+                                <option>Virginia</option>
+                                <option>Washington DC</option>
+                                <option>Maryland</option>
+                                <option>Vermont</option>
+                                <option>New Hampshire</option>
+                                <option>Maine</option>
+                                <option>Rhode Island</option>
+                                <option>Connecticut</option>
+                            </select>
+                        </div>
+
+                         <div class="input-field">
+                            <label>Gender</label>
+                            <select required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Area code</label>
+                            <input type="number" placeholder="Enter your Area code" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Profile Picture</label>
+                            <input class="file" type="file" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                     <span class="title">May we contact you?</span>
+                          <select required style="width: 300px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+ 
+                             <select  style="width: 300px;">
+                                <option disabled selected>Select</option>
+                                <option>Email</option>
+                                <option>Telephone</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+
+                 <div class="details ID">
+                    <span class="title">Availability</span>
+
+                    <div class="input-field">
+                         <label>Sunday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+
+                    <div class="input-field">
+                         <label>Monday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+
+                    <div class="input-field">
+                         <label>Tuesday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+
+                    <div class="input-field">
+                         <label>Wenesday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+
+                    <div class="input-field">
+                         <label>Thursday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+
+                    <div class="input-field">
+                         <label>Friday</label>
+                            <br>
+                              <input type="time" required style="width: 250px;">
+                             <label>To</label>
+                              <input type="time" required style="width: 250px;">
+                    </div>
+                </div>    
+                <div class="details ID">
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">What we offer</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Fitness Instruction</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Personal Training</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nutrition</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Physical Therapy</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Pilates</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Sports Conditioning</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Wellness/Lifestyle</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Yoga</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Massage Therapy</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Martial Arts</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                             <label>Athletic Training</label>
+                            <select required style="width: 410px;">
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>EXPERIENCE (YEARS)</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details family">
+                    <span class="title">Choose your Ratings </span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Your Charging Rate</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>USD($)</option>
+                            <option>CAD</option>
+                          </select>
+                         
+                        </div>
+
+                        
+<div class="input-field">
+                            <label>Your Charging Rate</label>
+                             <input type="number" placeholder="Enter your rate" required>
+                        </div>
+                        <div class="input-field">
+                            
+                        </div>
+
+                        <div class="input-field">
+                            
+                        </div>
+
+                        <div class="input-field">
+                            
+                        </div>
+
+                       
+                    </div>
+
+                    <span class="title">Your Prefered Payment Methods</span>
+
+                        <div class="input-field">
+                            <label>Cash</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                            </select>
+
+                            <label>Card</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                            </select>
+
+                            <label>Cashier Check</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                            </select>
+
+                            <label>Personal Check</label>
+                            <select required>
+                            <option disabled selected>Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                            </select>
+                             
+                        </div>
+
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+                        
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<script>
+const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        backBtn = form.querySelector(".backBtn"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.value != ""){
+            form.classList.add('secActive');
+        }else{
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+</script>
+
+{%endblock%} 
