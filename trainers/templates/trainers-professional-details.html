@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'trainers/trainers-submission-forms/css/style.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+</head>
+<body>
+
+<style>
+.alert-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-alert {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust spacing between alerts */
+  }
+
+  .bottom-heading {
+    text-align: left;
+    margin-top: 10px; /* Adjust spacing between alerts and heading */
+  }
+
+</style>
+
+
+
+
+   <nav>
+
+    <div class="logo-name">
+            <div class="logo-image">
+                <img src="{% static 'images/logo.png'%}" alt="">
+            </div>
+
+            <span class="logo_name"></span>
+        </div>
+        
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'personal-information' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/profile.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Personal Information</span>
+                </a></li>
+                <li><a href="{% url 'professional-details' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/workout.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Professional Details</span>
+                </a></li>
+                <li><a href="{% url 'profile-enhancement' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/user.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Profile Enhancement</span>
+                </a></li>
+                <li><a href="{% url 'pricing-and-payment'%}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/money.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Princing and Payment</span>
+                </a></li>
+
+
+
+
+        
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>  
+
+            
+            <ul class="navbar-nav">
+            <!-- Your navigation menu items go here -->
+            <li class="active"><a href="{% url 'main_index' %}">Home</a></li>
+            <li><a href="{% url 'main_index' %}">Programs</a></li>
+            <li><a href="{% url 'main_index' %}">All services</a></li>
+            <li><a href="{% url 'main_index' %}">About FTN</a></li>
+            <li><a href="{% url 'main_index' %}">Contact</a></li>
+
+        
+    
+    </li>
+            
+        
+        </ul>   
+                     
+        </div>
+     
+
+        
+         <div class="dash-content">
+
+            <div class="overview">
+            
+                <div class="title">
+                           {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} custom-alert alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+                    <img src="images/workout.png" alt="" style="padding:10px;">
+
+ 
+
+                    
+                </div>
+
+                <h2 class="bottom-heading">Professional Details</h2>
+                <br>
+
+
+
+               
+
+
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Save & Continue</button>
+                        <a href="{% url 'personal-information' username=user.username %}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </a>
+
+                    </form>
+                
+                     
+                        
+
+                    
+
+            </div>  
+        
+      </section>
+
+
+    <script src="script.js"></script>
+
+   
+</body>
+</html>

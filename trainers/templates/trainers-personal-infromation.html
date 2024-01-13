@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'trainers/trainers-submission-forms/css/style.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+   
+  
+</head>
+<body>
+
+<style>
+
+</style>
+
+    <nav>
+         <div class="logo-name">
+            <div class="logo-image">
+                <img src="{% static 'images/logo.png'%}" alt="">
+            </div>
+
+            <span class="logo_name"></span>
+        </div>
+        
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'personal-information' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/profile.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Personal Information</span>
+                </a></li>
+                <li><a href="{% url 'professional-details' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/workout.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Professional Details</span>
+                </a></li>
+                <li><a href="{% url 'profile-enhancement' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/user.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Profile Enhancement</span>
+                </a></li>
+                <li><a href="{% url 'profile-enhancement' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/money.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Princing and Payment</span>
+                </a></li>
+               
+            </ul>
+            
+             <ul class="logout-mode">
+                
+
+                
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+    
+        <div class="top">
+        
+            <i class="uil uil-bars sidebar-toggle"></i>  
+
+            <ul class="navbar-nav">
+            <!-- Your navigation menu items go here -->
+            <li class="active"><a href="{% url 'main_index' %}">Home</a></li>
+            <li><a href="{% url 'main_index' %}">Programs</a></li>
+            <li><a href="{% url 'main_index' %}">All services</a></li>
+            <li><a href="{% url 'main_index' %}">About FTN</a></li>
+            <li><a href="{% url 'main_index' %}">Contact</a></li>
+           
+        
+    </li>
+    
+            
+        
+        </ul>   
+        
+        
+              
+        </div>
+        
+        
+        
+         <div class="dash-content">
+         
+         
+            <div class="overview">
+            
+
+                
+
+                <div class="title">
+                
+                
+        
+                    
+                    <span class="text">Personal Information</span>
+                </div>
+                   
+
+                     <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Save & Continue</button> 
+                    </form>
+                         
+                         
+            </div>  
+        
+      </section>
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+ 
+</body>
+</html>
+

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'trainers/trainers-submission-forms/css/style.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+
+     
+</head>
+<body>
+
+<style>
+.alert-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-alert {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust spacing between alerts */
+  }
+
+  .bottom-heading {
+    text-align: left;
+    margin-top: 10px; /* Adjust spacing between alerts and heading */
+  }
+
+</style>
+    <nav>
+
+     <div class="logo-name">
+            <div class="logo-image">
+                 <img src="{% static 'images/logo.png'%}" alt="">
+            </div>
+
+            <span class="logo_name"></span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'personal-information' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/profile.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Personal Information</span>
+                </a></li>
+                <li><a href="{% url 'professional-details' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/workout.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Professional Details</span>
+                </a></li>
+                <li><a href="{% url 'profile-enhancement' username=user.username %}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/user.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Profile Enhancement</span>
+                </a></li>
+                <li><a href="{% url 'pricing-and-payment'%}">
+                    <img src="{% static 'trainers/trainers-submission-forms/Images/money.png' %}" alt="" style="padding:10px;">
+                    <span class="link-name">Princing and Payment</span>
+                </a></li>
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <div class="mode-toggle">
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>  
+
+            
+            <ul class="navbar-nav">
+            <!-- Your navigation menu items go here -->
+                 <li class="active"><a href="{% url 'main_index' %}">Home</a></li>
+            <li><a href="{% url 'main_index' %}">Programs</a></li>
+            <li><a href="{% url 'main_index' %}">All services</a></li>
+            <li><a href="{% url 'main_index' %}">About FTN</a></li>
+            <li><a href="{% url 'main_index' %}">Contact</a></li>
+          
+       
+        </ul>
+    </li>
+            
+        
+        </ul>   
+                     
+        </div>
+        
+         <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+
+                                           {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} custom-alert alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+                    <img src="images/user.png" alt="" style="padding:10px;">
+                 
+                </div>
+                <h2 class="bottom-heading">Profile Enhancement</h2>
+                <br>
+                      <form method="post" enctype="multipart/form-data">
+                             {% csrf_token %}
+  
+                             <h3>Your Online Presence</h3>
+                             <br>
+                            <label for="id_instagram_handle">Instagram handle:</label>
+                            {{ form.instagram_handle }}
+
+                            <label for="id_facebook_handle">Facebook handle:</label>
+                            {{ form.facebook_handle }}
+
+                            <label for="id_twitter_handle">Twitter handle:</label>
+                            {{ form.twitter_handle }}
+
+                            <label for="id_personal_website">Personal website:</label>
+                            {{ form.personal_website }}
+
+                            <!-- Your Personal Bio -->
+                            <h3>Your Personal Bio</h3>
+                            <br>
+                            {{ form.bio }}
+
+                            <br><br>
+                            <!-- Your Online Presence -->
+                        
+
+                            <br>
+                            <!-- Profile Pictures -->
+                            <h3>Image Picker</h3>
+                            <label for="id_profile_picture">Choose an image:</label>
+                            {{ form.profile_picture }}
+                            <img id="image-preview" src="{% if form.instance.profile_picture %}{{ form.instance.profile_picture.url }}{% endif %}" alt="Image Preview" style="max-width: 200px; max-height: 200px; margin-top: 10px;">
+      
+                            <br><br>
+                            <button type="submit">Save & Continue</button>
+
+
+
+ <a href="{% url 'professional-details' username=user.username %}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </a>
+
+                            
+
+                        </form>
+
+            </div>  
+        
+      </section>
+
+
+<script>
+    // Function to update image preview
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#image-preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Trigger the function when a file is selected
+    $("#id_profile_picture").change(function () {
+        readURL(this);
+    });
+</script>
+
+
+    <script src="script.js"></script>
+   
+</body>
+</html>

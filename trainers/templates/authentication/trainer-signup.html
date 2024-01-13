@@ -1,0 +1,81 @@
+{% extends 'trainer-base.html'%}
+{% load static %}
+{% block content %}
+
+  
+  
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+    
+                <img src="{% static 'trainers/images/Gym.gif' %}" alt="Image" class="img-fluid">
+
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h4>Sign up to <strong>Fitness Trainers Network</strong></h4>
+                        </div>
+                        
+                        <form method="POST" action="{% url 'sign_up' %}">
+                            {% csrf_token %}
+
+                          <div class="form-group first">
+                              <label for="username">Username</label>
+                           
+                              <input type="text" class="form-control" id="username" name="username" value="">
+                              
+                              {% if form.errors.username %}
+                                  <span class="text-danger">{{ form.errors.username.0 }}</span>
+                              {% endif %}
+                          </div>
+
+                          <div class="form-group first">
+                              <label for="email">Email</label>
+                            
+                              <input type="email" class="form-control" id="email" name="email" value="">
+                              {% if form.errors.email %}
+                                  <span class="text-danger">{{ form.errors.email.0 }}</span>
+                              {% endif %}
+                          </div>
+
+                          <div class="form-group first">
+                              <label for="password1">Password</label>
+                             
+                              <input type="password" class="form-control" id="password1" name="password1" value="">
+                              {% if form.password1.errors %}
+                                  <span class="text-danger">{{ form.password1.errors.0 }}</span>
+                              {% endif %}
+                          </div>
+
+                          <div class="form-group last mb-4">
+                              <label for="password2">Confirm Password</label>
+                          
+                              <input type="password" class="form-control" id="password2" name="password2" value="">
+                              {% if form.password2.errors %}
+                                  <span class="text-danger">{{ form.password2.errors.0 }}</span>
+                              {% endif %}
+                          </div>
+
+                          
+                               <span class="d-block text-left my-4 text-muted">By creating an account, you accept our <a href="#" target="#">terms</a> and <a href="#" target="#">conditions</a>.</span>
+
+
+
+                            <input type="submit" value="CREATE ACCOUNT" class="btn text-white btn-block btn-primary"
+                                style="background-color: #4CB648;">
+
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

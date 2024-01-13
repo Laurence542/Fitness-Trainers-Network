@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="fh5co-parallax" style="background-image: url({% static 'images/why_us_images/pexels-leon-ardho-1552245.jpg' %});">
+  <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div class="overlay"></div>
+               <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                            <div class="fh5co-intro fh5co-table-cell animate-box">
+                                <h1 class="text-center">Join us today! It is free!</h1>
+                                <p>
+                                   You work on your own terms and decide your own rates. We just bring the clients to you!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- end:fh5co-header -->
+            
+ <main id="main">
+    <!-- About Section - Home Page -->
+    <section id="about " class="about ">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>Why work with fitness trainers network</h3>
+            <h2>Unleash Your Professional Potential and Expand Your Professional Reach.</h2>
+            <p>
+             In our dynamic ecosystem of fitness excellence, opportunities for trainers and clients converge. Choosing our platform signifies a commitment to fostering your professional growth and propelling you towards unparalleled success.
+            </p>
+            <br>
+            <a href="{% url 'sign_up' %}" class="btn btn-success" role="button" style="height: 50px; line-height: 30px;">Create Trainer Account Now</a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-person"></i>
+                  <h3>Targeted Client Acquisition</h3>
+                  <p>Our platform seamlessly connects you with individuals actively seeking your unique skills. </p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                   <i class="bi bi-megaphone"></i>
+                  <h3> Marketing Support</h3>
+                  <p> Utilize our promotional initiatives and robust social media presence to enhance your brand visibility.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-shield-lock"></i>
+                  <h3>Secure Transactions</h3>
+                  <p>We prioritize the safety of both trainers and clients, fostering a trustworthy environment for everyone involved.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-people"></i>
+                  <h3>Community Connectivity</h3>
+                  <p>Join a vibrant community of fitness professionals. Share insights, collaborate on challenges, and build a supportive network.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+   
+
+    <!-- Features Section - Home Page -->
+    <section id="features" class="features">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <p style="font-size: 15px;">Explore how Fitness Trainers Network empowers you to excel in the fitness industry.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Amplify Your Visibility</h3>
+            <p>
+              Showcase your expertise to potential clients actively seeking fitness professionals. Elevate your online presence and expand your clientele effortlessly.
+            </p>
+           <a href="{% url 'sign_up' %}" class="btn btn-success" role="button" style="height: 50px; line-height: 30px; ">Create Trainer Account Now</a>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="image-stack">
+              <img src="{% static 'images/why_us_images/pexels-leon-ardho-1552249.jpg' %}" alt="" class="stack-front" style="border-radius:20px">
+              <img src="{% static 'images/why_us_images/pexels-victor-freitas-791763.jpg' %}" alt="" class="stack-back" style="border-radius:20px">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Features Item -->
+
+        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+            <img src="{% static 'images/why_us_images/pexels-leon-ardho-2468339.jpg' %}" class="img-fluid" alt="" style="border-radius:20px;">
+          </div>
+          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+            <h3>Targeted Client Acquisition</h3>
+            <p>
+            Connect with individuals actively searching for your unique skills and services. Our platform matches you with clients whose fitness goals align perfectly with what you have to offer.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Showcase your profile to potential clients actively seeking fitness professionals.</span></li>
+              <li><i class="bi bi-check"></i><span>  Connect with clients whose fitness goals align perfectly with your expertise.</span></li>
+              <li><i class="bi bi-check"></i> <span>Seamless booking and payment system for hassle-free transactions.</span>.</li>
+            </ul>
+            <a href="{% url 'sign_up' %}" class="btn btn-success" role="button" style="height: 50px; line-height: 30px; width: 310px;">Create Trainer Account Now</a>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    
+
+    
+
+    <!-- FAQ Section - Home Page -->
+<section id="faq" class="faq">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="content px-xl-5">
+          <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+          <p>
+            Explore common queries about Fitness Trainers Network and our services to help you navigate seamlessly.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="faq-container">
+          <div class="faq-item faq-active">
+            <h3><span class="num">1.</span> <span>How can I create a trainer profile on Fitness Trainers Network?</span></h3>
+            <div class="faq-content">
+              <p>Creating a trainer profile is easy! Simply click on the "Create Trainer Account Now" button, fill in the required information, and follow the steps to set up your profile.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">2.</span> <span>How does Fitness Trainers Network match trainers with clients?</span></h3>
+            <div class="faq-content">
+              <p>Our platform uses advanced algorithms to match trainers with clients based on their fitness goals and preferences. This ensures a targeted and personalized connection for both parties.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">3.</span> <span>What features are available for trainers on Fitness Trainers Network?</span></h3>
+            <div class="faq-content">
+              <p>Trainers on our platform enjoy features such as enhanced visibility, targeted client acquisition, secure transactions, marketing support, and community connections. Check our Features section for more details.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">4.</span> <span>How secure are the transactions on Fitness Trainers Network?</span></h3>
+            <div class="faq-content">
+              <p>Rest assured, all transactions on our platform are secure and transparent. We prioritize the safety of both trainers and clients, ensuring a trustworthy environment for everyone involved.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">5.</span> <span>Can I connect with other fitness professionals on Fitness Trainers Network?</span></h3>
+            <div class="faq-content">
+              <p>Absolutely! Fitness Trainers Network is not just a platform; it's a community. Connect with other fitness professionals, share insights, and build a network that supports your professional growth.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- End Faq Section -->
+
+ 
+
+  </main>
+
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'css/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'css/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'css/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'css/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'css/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'css/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'css/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/why_us.js' %}"></script>
+
+</body>
+
+</html>
+
+{%endblock%}

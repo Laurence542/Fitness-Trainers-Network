@@ -1,0 +1,437 @@
+/* Fonts */
+:root {
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Lato", sans-serif;
+}
+
+/* Global Colors */
+:root {
+  --background-color: #ffffff;
+  --background-color-rgb: 255, 255, 255;
+  --default-color: #212529;
+  --default-color-rgb: 33, 37, 41;
+  --primary-color: #4CB648;
+  --primary-color-rgb: 232, 69, 69;
+  --secondary-color: #32353a;
+  --secondary-color-rgb: 50, 53, 58;
+  --contrast-color: #ffffff;
+  --backgroud-hover-color: #848484;
+
+}
+
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: rgba(var(--primary-color-rgb), 0.7);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
+}
+
+.fh5co-parallax {
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+
+section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Section Title
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.section-title h2:before,
+.section-title h2:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--primary-color);
+  display: inline-block;
+}
+
+.section-title h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2:after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+/* About Section - Home Page
+------------------------------*/
+.about {
+  --background-color: #f4f4f4;
+}
+
+.about .content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  padding: 10px 20px;
+  background: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+  border-radius: 7px;
+  display: inline-block;
+}
+
+.about .content h2 {
+  font-weight: 650;
+  font-size: 35px;
+}
+
+.about .content p {
+  font-size: 18px;
+  color: #212529;
+  margin: 0;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .read-more {
+  background: var(--primary-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .content .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.about .content .read-more:hover {
+  background: #848484;
+  
+
+}
+
+.about .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+.about .icon-box {
+  padding: 30px 40px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease-out 0s;
+  background-color: #fff;
+}
+
+.about .icon-box i {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 0;
+  transition: all 0.4s ease-out 0s;
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+}
+
+.about .icon-box h3 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 520;
+}
+
+.about .icon-box p {
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #212529;
+  
+}
+
+.about .icon-box:hover i {
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+}
+
+.about .icon-boxes .col-md-6:nth-child(2) .icon-box,
+.about .icon-boxes .col-md-6:nth-child(4) .icon-box {
+  margin-top: -40px;
+}
+
+@media (max-width: 768px) {
+
+  .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
+  .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
+    margin-top: 0;
+  }
+}
+
+
+/* Features Section - Home Page
+------------------------------*/
+.features .features-item {
+  color: rgba(var(--default-color-rgb), 0.8);
+}
+
+.features .features-item+.features-item {
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .features .features-item+.features-item {
+    margin-top: 40px;
+  }
+}
+
+.features .features-item h3 {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.features .features-item .btn-get-started {
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+  height: 5rem;
+  border-radius: 4px;
+}
+
+.features .features-item .btn-get-started:hover {
+  background-color: #848484;
+}
+
+.features .features-item ul {
+  color: #212529;
+  font-size: 18px;
+  list-style: none;
+  padding: 0;
+}
+
+.features .features-item p {
+  color: #212529;
+  font-size: 18px;
+}
+
+.features .features-item ul li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.features .features-item ul li:last-child {
+  padding-bottom: 0;
+}
+
+.features .features-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--primary-color);
+}
+
+.features .features-item img {
+  border: 6px solid var(--background-color);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.features .features-item .features-img-bg {
+  position: relative;
+  min-height: 500px;
+}
+
+@media (max-width: 640px) {
+  .features .features-item .features-img-bg {
+    min-height: 300px;
+  }
+}
+
+.features .features-item .features-img-bg img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.features .features-item .image-stack {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.features .features-item .image-stack .stack-back {
+  grid-column: 4/-1;
+  grid-row: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+.features .features-item .image-stack .stack-front {
+  grid-row: 1;
+  grid-column: 1/span 8;
+  margin-top: 20%;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Faq Section - Home Page
+------------------------------*/
+.faq .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.faq .content p {
+  font-size: 18px;
+  color: #212529;
+}
+
+.faq .faq-container .faq-item {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 25px 0px rgba(var(--default-color-rgb), 0.1);
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+}
+
+.faq .faq-container .faq-item h3 .num {
+  color: var(--primary-color);
+  padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: var(--primary-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+  font-size: 17px;
+  color: #212529;;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--primary-color);
+}
+
+.faq .faq-container .faq-active h3 {
+  color: var(--primary-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--primary-color);
+}
+
